@@ -1,0 +1,5 @@
+// the configured options and settings for metagenome_simulator
+#define metagenome_simulator_VERSION_MAJOR @metagenome_simulator_VERSION_MAJOR@
+#define metagenome_simulator_VERSION_MINOR @metagenome_simulator_VERSION_MINOR@
+#define metagenome_simulator_VERSION_PATCH @metagenome_simulator_VERSION_PATCH@
+#define metagenome_simulator_VERSION "@metagenome_simulator_VERSION@"
