@@ -1,0 +1,5 @@
+// the configured options and settings for metagenome_simulator
+#define metamrsim_VERSION_MAJOR @metamrsim_VERSION_MAJOR@
+#define metamrsim_VERSION_MINOR @metamrsim_VERSION_MINOR@
+#define metamrsim_VERSION_PATCH @metamrsim_VERSION_PATCH@
+#define metamrsim_VERSION "@metamrsim_VERSION@"

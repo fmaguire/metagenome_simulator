@@ -9,8 +9,8 @@
 #include <seqan/arg_parse.h>
 #include <seqan/sequence.h>
 
-#include "metagenome_simulator_config.h"
-#include "metagenome_simulator.h"
+#include "metamrsim_config.h"
+#include "metamrsim.h"
 
 #define RANDOM_SEED 42
 
@@ -65,13 +65,13 @@ seqan::ArgumentParser::ParseResult parseGenerateArgs(GenerateOptions& options,
     /* Build argument parser, validate and store parsed arguments 
      *in an instance of the GenerateOptions class.
      */
-    seqan::ArgumentParser parser("metagenome_simulator");
+    seqan::ArgumentParser parser("metamrsim");
 
     setShortDescription(parser, "Synthetic AMR-focused Metagenome Generator");
 
-    setVersion(parser, metagenome_simulator_VERSION);
+    setVersion(parser, metamrsim_VERSION);
 
-    setDate(parser, "March 2018");
+    setDate(parser, "September 2020");
 
     addUsageLine(parser, "[\\fIOPTIONS\\fP] \\fIData_File.tsv\\fP");
 
@@ -579,7 +579,7 @@ void getCleanReads(std::string output_name){
 // ==========================================================================
 // Function generateTraining()
 // ==========================================================================
-int generateTraining(int argc, char *argv[]){
+int main(int argc, char *argv[]){
     /* Main runner function for the generation of training data mode
      * parameterised by the post 'mode' selection command line args.
      *

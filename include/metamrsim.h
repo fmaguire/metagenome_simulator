@@ -1,5 +1,5 @@
-#ifndef METAGENOME_SIMULATOR_H_
-#define METAGENOME_SIMULATOR_H_
+#ifndef METAMRSIM_H_
+#define METAMRSIM_H_
 
 #include <seqan/arg_parse.h>
 #include <vector>
@@ -101,7 +101,7 @@ uint32_t stoui32(const std::string& s);
 
 void getCleanReads(std::string output_name);
 
-int generateTraining(int argc, char *argv[]);
+int main(int argc, char *argv[]);
 
 std::ostream& operator<< (std::ostream &out, const AmrAnnotation &annotation);
 bool operator== (const AmrAnnotation &first, const AmrAnnotation &other);

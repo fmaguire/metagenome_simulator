@@ -1,17 +1,17 @@
 # configures dependencies, platform specifics and output paths
 
-cmake_minimum_required(VERSION 3.5.1)
-project(metagenome_simulator)
+cmake_minimum_required(VERSION 3.0.0)
+project(metamrsim)
 
 #set (CMAKE_CXX_STANDARD 14)
 SET(CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS} "-std=c++14 -pthread")
 
 
 # versioning
-set(metagenome_simulator_VERSION_MAJOR 0)
-set(metagenome_simulator_VERSION_MINOR 0)
-set(metagenome_simulator_VERSION_PATCH 2)
-set(metagenome_simulator_VERSION "${metagenome_simulator_VERSION_MAJOR}.${metagenome_simulator_VERSION_MINOR}.${metagenome_simulator_VERSION_PATCH}")
+set(metamrsim_VERSION_MAJOR 1)
+set(metamrsim_VERSION_MINOR 0)
+set(metamrsim_VERSION_PATCH 0)
+set(metamrsim_VERSION "${metamrsim_VERSION_MAJOR}.${metamrsim_VERSION_MINOR}.${metamrsim_VERSION_PATCH}")
 
 # include_dirs
 set(PROJECT_INCLUDE_DIR "${PROJECT_SOURCE_DIR}/include")
@@ -20,14 +20,15 @@ include_directories(${PROJECT_INCLUDE_DIR})
 
 # config header
 configure_file (
-    "${PROJECT_INCLUDE_DIR}/metagenome_simulator_config.h.in"
-    "${PROJECT_BINARY_DIR}/metagenome_simulator_config.h"
+    "${PROJECT_INCLUDE_DIR}/metamrsim_config.h.in"
+    "${PROJECT_BINARY_DIR}/metamrsim_config.h"
     )
 include_directories("${PROJECT_BINARY_DIR}")
 
 # dependencies
-set(SEQAN_FIND_DEPENDENCIES ZLIB BZip2)
-find_package(SeqAn REQUIRED)
+find_package(ZLIB)
+
+find_package(SeqAn REQUIRED HINTS "${PROJECT_SOURCE_DIR}/seqan/util/cmake")
 include_directories(${SEQAN_INCLUDE_DIRS})
 add_definitions(${SEQAN_DEFINITIONS})
 
